@@ -138,6 +138,9 @@
 
 <!-- Language Switcher -->
 <script>
+  if (window.location.hostname === 'nordhispana.com') {
+    window.location.href = 'https://www.nordhispana.com' + window.location.pathname;
+  }
   const translations = {
     ru: {
       headline: "🌿 Соединяя инновации в области здоровья между Европой и Евразией",

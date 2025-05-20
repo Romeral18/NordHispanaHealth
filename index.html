@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NordHispana Health</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Open+Sans&display=swap" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background-color: #ffffff;
+      color: #1b1b1b;
+      height: 100%;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .navbar {
+        font-family: 'Montserrat', sans-serif;
+        position: sticky;
+        top: 0;
+        z-index: 999;
+        background-color: #ffffff;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .hero {
+      background: linear-gradient(rgba(27, 75, 56, 0.75), rgba(27, 75, 56, 0.75)),
+                  url('https://images.unsplash.com/photo-1722993764193-65255870a01b?q=80&w=2076&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat;
+      color: white;
+      padding: 6rem 2rem;
+      text-align: center;
+    }
+    @media (max-width: 768px) {
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 600;
+        }
+
+        .hero p {
+            font-size: 1.25 rem;
+            margin-top: 1rem;
+        }
+    }
+    .btn-cta {
+      margin-top: 2rem;
+      background-color: #1b4b38;
+      color: #fff;
+      font-weight: 500;
+      padding: 0.7rem 1.4rem;
+      border: none;
+    }
+
+    .btn-cta:hover {
+      background-color: #145b43;
+    }
+
+    footer {
+      background-color: #f1f1f1;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      margin-top: 3rem;
+    }
+     .fade-in {
+        opacity: 0;
+        animation: fadeIn 1.2s ease-in-out forwards;
+    }
+
+    @keyframes fadeIn {
+        to {
+        opacity: 1;
+        }
+    }
+    html {
+        scroll-behavior: smooth;
+        height: 100%;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+    }   
+    .btn-cta {
+        animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+        100% { transform: scale(1); }
+    }
+    main {
+     flex: 1;
+    }
+  </style>
+<main>
+</head>
+<body class="fade-in">
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light px-3">
+  <a class="navbar-brand fw-semibold" href="index.html">NordHispana</a>
+  <div class="ms-auto">
+    <a href="about.html" class="btn btn-link">О нас</a>
+    <a href="services.html" class="btn btn-link">Услуги</a>
+    <a href="partners.html" class="btn btn-link">Партнёрство</a>
+    <a href="contact.html" class="btn btn-link">Контакты</a>
+    <button class="btn btn-sm btn-outline-secondary me-1" onclick="setLang('ru')">RU</button>
+    <button class="btn btn-sm btn-outline-secondary me-1" onclick="setLang('en')">EN</button>
+    <button class="btn btn-sm btn-outline-secondary" onclick="setLang('es')">ES</button>
+  </div>
+</nav>
+
+<!-- Hero -->
+<header class="hero">
+  <h1 id="headline">🌿 Connecting Health Innovations Between Europe & Eurasia</h1>
+  <p id="subtitle">Дистрибуция, партнёрство и адаптация нутрицевтиков и биотехнологических решений между Испанией и странами ЕАЭС.</p>
+  <a href="contact.html" class="btn btn-cta" id="cta-button">📞 Связаться с нами</a>
+</header>
+<div style="margin-top:-3px">
+  <svg viewBox="0 0 1440 100" xmlns="http://www.w3.org/2000/svg">
+    <path fill="#ffffff" d="M0,64L1440,0L1440,320L0,320Z"></path>
+  </svg>
+</div>
+<!-- Footer -->
+<footer>
+  © 2025 NordHispana Health | romeral@nordhispanahealth.com | +34 675 461 920
+</footer>
+</main>
+<!-- Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Language Switcher -->
+<script>
+  const translations = {
+    ru: {
+      headline: "🌿 Соединяя инновации в области здоровья между Европой и Евразией",
+      subtitle: "Дистрибуция, партнёрство и адаптация нутрицевтиков и биотехнологических решений между Испанией и странами ЕАЭС.",
+      button: "📞 Связаться с нами"
+    },
+    en: {
+      headline: "🌿 Connecting Health Innovations Between Europe & Eurasia",
+      subtitle: "Distribution, partnerships, and localization of nutraceutical and biotech solutions between Spain and the EAEU.",
+      button: "📞 Contact Us"
+    },
+    es: {
+      headline: "🌿 Conectando Innovaciones de Salud entre Europa y Eurasia",
+      subtitle: "Distribución, colaboración y localización de soluciones nutracéuticas y biotecnológicas entre España y la UEEA.",
+      button: "📞 Contáctanos"
+    }
+  };
+
+  function setLang(lang) {
+    const t = translations[lang];
+    const h = document.getElementById("headline");
+    const s = document.getElementById("subtitle");
+    const b = document.getElementById("cta-button");
+
+    [h, s, b].forEach(el => {
+      el.style.opacity = 0;
+    });
+
+    setTimeout(() => {
+      h.textContent = t.headline;
+      s.textContent = t.subtitle;
+      b.textContent = t.button;
+      [h, s, b].forEach(el => {
+        el.style.opacity = 1;
+        el.style.transition = "opacity 0.6s";
+      });
+    }, 300);
+  }
+</script>
+
+
+</body>
+</html>

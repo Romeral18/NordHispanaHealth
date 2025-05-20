@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Партнёрство | NordHispana Health</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Open+Sans&display=swap" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background-color: #fff;
+      color: #1b1b1b;
+    }
+
+    .navbar {
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .hero {
+      background: linear-gradient(rgba(27, 75, 56, 0.8), rgba(27, 75, 56, 0.8)), url('https://images.unsplash.com/photo-1721569384439-f53085329cc3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat;
+      color: white;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: 600;
+    }
+
+    .section-content {
+      padding: 3rem 1rem;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .section-content ul {
+      font-size: 1.2rem;
+      padding-left: 1.2rem;
+    }
+
+    .btn-custom {
+      background-color: #1b4b38;
+      color: #fff;
+      font-weight: 500;
+      padding: 0.8rem 1.5rem;
+      font-size: 1.1rem;
+      border: none;
+    }
+
+    .btn-custom:hover {
+      background-color: #145b43;
+    }
+
+    footer {
+      background-color: #f1f1f1;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light px-3">
+  <a class="navbar-brand fw-semibold" href="index.html">NordHispana</a>
+  <div class="ms-auto">
+    <a href="about.html" class="btn btn-link">О нас</a>
+    <a href="services.html" class="btn btn-link">Услуги</a>
+    <a href="partners.html" class="btn btn-link">Партнёрство</a>
+    <a href="contact.html" class="btn btn-link">Контакты</a>
+    <button class="btn btn-sm btn-outline-secondary me-1" onclick="setLang('ru')">RU</button>
+    <button class="btn btn-sm btn-outline-secondary me-1" onclick="setLang('en')">EN</button>
+    <button class="btn btn-sm btn-outline-secondary" onclick="setLang('es')">ES</button>
+  </div>
+</nav>
+
+<!-- Hero -->
+<header class="hero">
+  <h1 id="headline">🤝 Хотите выйти на российский рынок?</h1>
+</header>
+
+<!-- Main Content -->
+<section class="section-content text-center">
+  <p id="text">
+    Мы работаем с брендами из Испании, Португалии, Италии и Германии. Интересны гибкие производители с уникальными формулами, готовые к сотрудничеству в модели:
+  </p>
+
+  <ul id="model-list" class="list-unstyled mt-3">
+    <li>• Дистрибуция</li>
+    <li>• White Label</li>
+    <li>• Совместная разработка</li>
+  </ul>
+
+  <a href="mailto:romeral@nordhispanahealth.com" class="btn btn-custom mt-4" id="cta">📩 Отправить заявку на партнёрство</a>
+</section>
+
+<!-- Footer -->
+<footer>
+  © 2025 NordHispana Health | romeral@nordhispanahealth.com | +34 675 461 920
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Language Script -->
+<script>
+  const translations = {
+    ru: {
+      headline: "🤝 Хотите выйти на российский рынок?",
+      text: "Мы работаем с брендами из Испании, Португалии, Италии и Германии. Интересны гибкие производители с уникальными формулами, готовые к сотрудничеству в модели:",
+      modelList: ["• Дистрибуция", "• White Label", "• Совместная разработка"],
+      cta: "📩 Отправить заявку на партнёрство"
+    },
+    en: {
+      headline: "🤝 Want to enter the Russian market?",
+      text: "We work with brands from Spain, Portugal, Italy, and Germany. We are looking for flexible producers with unique formulas, open to collaboration through:",
+      modelList: ["• Distribution", "• White Label", "• Joint development"],
+      cta: "📩 Send partnership request"
+    },
+    es: {
+      headline: "🤝 ¿Quiere entrar en el mercado ruso?",
+      text: "Trabajamos con marcas de España, Portugal, Italia y Alemania. Buscamos fabricantes flexibles con fórmulas únicas, abiertos a colaborar mediante:",
+      modelList: ["• Distribución", "• Marca blanca", "• Desarrollo conjunto"],
+      cta: "📩 Enviar solicitud de colaboración"
+    }
+  };
+
+  function setLang(lang) {
+    const t = translations[lang];
+    document.getElementById("headline").textContent = t.headline;
+    document.getElementById("text").textContent = t.text;
+    document.getElementById("cta").textContent = t.cta;
+
+    const ul = document.getElementById("model-list");
+    ul.innerHTML = "";
+    t.modelList.forEach(item => {
+      const li = document.createElement("li");
+      li.textContent = item;
+      ul.appendChild(li);
+    });
+  }
+</script>
+
+</body>
+</html>
